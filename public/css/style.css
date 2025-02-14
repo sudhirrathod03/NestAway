@@ -12,10 +12,9 @@ body {
   color: crimson;
   font-size: 2rem;
 }
-/* .navbar {
-  height: 5rem;
+.navbar {
   background-color: white;
-} */
+}
 .nav-link {
   color: black !important;
 }

@@ -33,6 +33,9 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "/public")));
 app.engine("ejs", ejsMate);
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 main()
   .then(() => {
     console.log("Connected succesfully!");
