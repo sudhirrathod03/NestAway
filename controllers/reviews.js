@@ -3,6 +3,7 @@ const Listing = require("../models/listing.js");
 
 module.exports.postReview = async (req, res, next) => {
   let listing = await Listing.findById(req.params.id);
+
   let newReview = new Review(req.body.review);
   newReview.author = req.user._id;
   listing.reviews.push(newReview);
@@ -18,3 +19,6 @@ module.exports.destroyReview = async (req, res) => {
   req.flash("success", "Review was deleted");
   res.redirect(`/listings/${id}`);
 };
+
+
+

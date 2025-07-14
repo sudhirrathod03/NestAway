@@ -40,3 +40,4 @@ module.exports.logOutUser = (req, res, next) => {
     res.redirect("/listings");
   });
 };
+
