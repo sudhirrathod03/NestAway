@@ -36,7 +36,7 @@
   <!-- Edit/Delete Buttons (Only for Owner) -->
   <% if(currUser && list.owner._id.equals(currUser._id)) { %>
   <div class="row mt-3">
-    <div class="col-6 d-flex justify-content-center gap-2" style="margin-left: 80px;">
+    <div class="col-6 d-flex justify-content-center  gap-2" style="margin-left: 80px;">
       <a href="/listings/<%= list._id %>/edit" class="btn btn-outline-success">
         Edit
       </a>

@@ -28,7 +28,6 @@ router
   .get(wrapAsync(listingController.showListing))
   .put(
     isLoggedin,
-
     isOwner,
     upload.single("listing[image]"),
     validateListings,
