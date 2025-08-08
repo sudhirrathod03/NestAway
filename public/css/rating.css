@@ -1,3 +1,4 @@
+
 .starability-result {
   position: relative;
   width: 150px;
@@ -197,4 +198,25 @@
 .starability-slot > input:focus ~ label {
   -webkit-transition: background-position 0.7s;
   transition: background-position 0.7s;
+}
+/* Review Card Title (e.g., Sudhir Rathod) */
+.review-card .card-title {
+  font-size: 1.1rem;  /* ~18px, bold and prominent */
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+
+.starability-result {
+  margin-bottom: 0.5rem;
+}
+
+.review-card .card-text {
+  font-size: 1rem;     
+  line-height: 1.5;     
+  color: #333;          
+}
+
+.card-body{
+  padding: 0.5rem !important;
 }

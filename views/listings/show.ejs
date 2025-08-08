@@ -4,16 +4,14 @@
   const listing = <%- JSON.stringify(list)%>;
 </script>
 <div class="container mt-3">
-  <!-- Listing Title -->
   <div class="row">
     <div class="col-12 col-md-8 offset-md-2">
       <h2 class="text-center"><%= list.title %></h2>
     </div>
   </div>
 
-  <!-- Listing Card -->
   <div class="row mt-3">
-    <div class="col-12 col-md-6 offset-3">
+    <div class="col-md-8 offset-md-2">
       <div class="card listing-card">
         <img
           src="<%= list.image.url %>"
@@ -22,7 +20,7 @@
         />
         <div class="card-body">
           <% if (list.owner) { %>
-            <p class="card-text">Owned by <i><%= list.owner.username %></i></p>
+          <p class="card-text">Owned by <i><%= list.owner.username %></i></p>
           <% } %>
           <p class="card-text"><%= list.description %></p>
           <p class="card-text">
@@ -36,10 +34,11 @@
     </div>
   </div>
 
-  <!-- Edit/Delete Buttons (Only for Owner) -->
   <% if(currUser && list.owner._id.equals(currUser._id)) { %>
   <div class="row mt-3">
-    <div class="col-6 d-flex justify-content-center  gap-2" style="margin-left: 80px;">
+    <div
+      class="col-12 d-flex justify-content-center gap-2"
+    >
       <a href="/listings/<%= list._id %>/edit" class="btn btn-outline-success">
         Edit
       </a>
@@ -50,9 +49,8 @@
   </div>
   <% } %>
 
-  <!-- Review Form & Reviews -->
   <div class="row mt-4">
-    <div class="col-12 col-md-8 offset-2">
+    <div class="col-md-8 offset-md-2">
       <hr />
       <% if(currUser) { %>
       <h4>Leave a Review</h4>
@@ -127,43 +125,50 @@
           </div>
         </div>
 
-        <button class="btn btn-outline-dark edit-btn" type="submit">Submit</button>
+        <button class="btn btn-outline-dark edit-btn" type="submit">
+          Submit
+        </button>
       </form>
       <% } %> <% if(list.reviews && list.reviews.length > 0) { %>
-      <div class="row mt-4">
-        <div class="col-12">
-          <h4>All Reviews</h4>
-        </div>
-        <% list.reviews.forEach(function(review) { %>
-        <div class="col-12 col-sm-6 col-md-5 mb-3">
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title"><%= review.author.username %></h5>
-              <p
-                class="starability-result card-text"
-                data-rating="<%= review.rating %>"
-              ></p>
-              <p class="card-text"><%= review.comment %></p>
-            </div>
-            <form
-              action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE"
-              method="POST"
-              class="mb-3"
-            >
-              <button class="btn btn-danger btn-sm" type="submit">
-                Delete
-              </button>
-            </form>
+        <div class="row mt-3">
+          <div class="col-12">
+            <hr>
+            <h4>All Reviews</h4>
           </div>
+        
+          <% list.reviews.forEach(function(review) { %>
+          <div class="col-md-6 mb-3">
+            <div class="card review-card">
+              <div class="card-body">
+                <h5 class="card-title"><%= review.author.username %></h5>
+                
+                <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                
+                <p class="card-text"><%= review.comment %></p>
+        
+                <% if(currUser && review.author.equals(currUser._id)) { %>
+                <form
+                  action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE"
+                  method="POST"
+                  class="mt-2"
+                >
+                  <button class="btn btn-sm edit-btn" type="submit">Delete</button>
+                </form>
+                <% } %>
+              </div>
+            </div>
+          </div>
+          <% }); %>
         </div>
-        <% }); %>
-      </div>
       <% } %>
     </div>
   </div>
-  <div class="col-12 mt-3 mb-3 col-md-8 offset-2">
-    <h3>where you'll be</h3>
-    <div id="map"></div>
+  <div class="row">
+    <div class="col-md-8 offset-md-2 mt-3 mb-3">
+      <h3>where you'll be</h3>
+      <div id="map"></div>
+    </div>
   </div>
+
 </div>
 <script src="/js/map.js"></script>
