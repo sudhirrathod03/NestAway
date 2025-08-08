@@ -20,7 +20,7 @@ router.route("/").get(wrapAsync(listingController.index)).post(
 );
 
 //new route
-router.get("/new", isLoggedin, listingController.renderNewForm);
+router.get("/new", isLoggedin, listingController.renderNewForm)
 
 //show route, update route(":/id")
 router

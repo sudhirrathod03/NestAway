@@ -21,13 +21,16 @@
           alt="Listing"
         />
         <div class="card-body">
-          <p class="card-text">Owned by <i><%= list.owner.username %></i></p>
+          <% if (list.owner) { %>
+            <p class="card-text">Owned by <i><%= list.owner.username %></i></p>
+          <% } %>
           <p class="card-text"><%= list.description %></p>
           <p class="card-text">
             Price: &#8377;<%= list.price.toLocaleString("en-IN") %>
           </p>
           <p class="card-text">Location: <%= list.location %></p>
           <p class="card-text">Country: <%= list.country %></p>
+          <p class="card-text">Category: <%= list.category %></p>
         </div>
       </div>
     </div>

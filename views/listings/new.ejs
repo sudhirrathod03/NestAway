@@ -76,10 +76,33 @@
         />
         <div class="invalid-feedback">Country name should be valid!</div>
       </div>
-      <br />
+      
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select
+          name="listing[category]"
+          class="form-control"
+          required
+        >
+          <option value="">Select a Category</option>
+          <option value="Trending">Trending</option>
+          <option value="Rooms">Rooms</option>
+          <option value="Iconic Cities">Iconic Cities</option>
+          <option value="Mountains">Mountains</option>
+          <option value="Castles">Castles</option>
+          <option value="Amazing Pools">Amazing Pools</option>
+          <option value="Camping">Camping</option>
+          <option value="Farms">Farms</option>
+          <option value="Arctic">Arctic</option>
+        </select>
+        <div class="invalid-feedback">Please select a category</div>
+      </div>
+      
       <button type="submit" class="btn btn-outline-dark add-btn mt-3">
         Add</button
-      ><br /><br />
+      >
+      
+      <br /><br />
     </form>
   </div>
 </div>

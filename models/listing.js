@@ -24,7 +24,21 @@ const listingSchema = new schema({
   },
 
  
-
+  category: {
+    type: String,
+    required: true, // you can make this optional if needed
+    enum: [
+      'Trending',
+      'Rooms',
+      'Iconic Cities',
+      'Mountains',
+      'Castles',
+      'Amazing Pools',
+      'Camping',
+      'Farms',
+      'Arctic'
+    ]
+  },
   reviews: [
     {
       type: mongoose.Schema.Types.ObjectId,

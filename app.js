@@ -53,8 +53,8 @@ const store = MongoStore.create({
   crypto: {},
   touchAfter: 24 * 3600,
 });
-store.on("error", () => {
-  console.log("erroe in mongo session store", err);
+store.on("error", (err) => { // Fix: Add 'err' as a parameter
+  console.log("ERROR in MONGO SESSION STORE", err);
 });
 const sessionOption = {
   store,
