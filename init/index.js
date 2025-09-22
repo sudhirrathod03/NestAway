@@ -1,7 +1,6 @@
 const path = require("path");
 
 if (process.env.NODE_ENV != "production") {
-  // Modify this line
   require("dotenv").config({ path: path.resolve(__dirname, "../.env") });
 }
 const mongoose = require("mongoose");
@@ -10,7 +9,7 @@ const Listing = require("../models/listing.js");
 
 
 const MONGO_URL = process.env.ATLASDB_URL;
-console.log(MONGO_URL); // Temporarily add this to check if the URL is loaded
+console.log(MONGO_URL); 
 
 main()
   .then(() => {

@@ -23,21 +23,20 @@ const listingSchema = new schema({
     type: String,
   },
 
- 
   category: {
     type: String,
     required: true, // you can make this optional if needed
     enum: [
-      'Trending',
-      'Rooms',
-      'Iconic Cities',
-      'Mountains',
-      'Castles',
-      'Amazing Pools',
-      'Camping',
-      'Farms',
-      'Arctic'
-    ]
+      "Trending",
+      "Rooms",
+      "Iconic Cities",
+      "Mountains",
+      "Castles",
+      "Amazing Pools",
+      "Camping",
+      "Farms",
+      "Arctic",
+    ],
   },
   reviews: [
     {
@@ -50,17 +49,17 @@ const listingSchema = new schema({
     ref: "User",
   },
 
-  geometry:{
+  geometry: {
     type: {
       type: String, // Don't do `{ location: { type: String } }`
-      enum: ['Point'], // 'location.type' must be 'Point'
-      required: true
+      enum: ["Point"], // 'location.type' must be 'Point'
+      required: true,
     },
     coordinates: {
       type: [Number],
-      required: true
-    }
-},
+      required: true,
+    },
+  },
 });
 
 listingSchema.index({ title: "text", description: "text", location: "text" });

@@ -53,7 +53,8 @@ const store = MongoStore.create({
   crypto: {},
   touchAfter: 24 * 3600,
 });
-store.on("error", (err) => { // Fix: Add 'err' as a parameter
+store.on("error", (err) => {
+  // Fix: Add 'err' as a parameter
   console.log("ERROR in MONGO SESSION STORE", err);
 });
 const sessionOption = {
@@ -112,4 +113,3 @@ app.use((err, req, res, next) => {
 app.listen(8080, () => {
   console.log("listening to port 8080");
 });
-

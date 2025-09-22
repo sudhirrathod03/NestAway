@@ -5,10 +5,6 @@ const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
-// module.exports.index = async (req, res) => {
-//   const allListings = await Listing.find({});
-//   res.render("listings/index.ejs", { allListings });
-// };
 module.exports.index = async (req, res) => {
   const { category } = req.query;
   let allListings;
@@ -21,7 +17,6 @@ module.exports.index = async (req, res) => {
 
   res.render("listings/index", { allListings, category });
 };
-
 
 module.exports.renderNewForm = (req, res) => {
   res.render("listings/new.ejs");
@@ -51,12 +46,6 @@ module.exports.createListing = async (req, res, next) => {
       limit: 1,
     })
     .send();
-
-
-  //let {title, description, image, price, location, country} = req.body;
-  //   let listing = req.body.listing;
-  //   new Listing(listing);
-  //  OR
   let url = req.file.path;
   let filename = req.file.filename;
   const newListing = new Listing(req.body.listing);
@@ -64,7 +53,7 @@ module.exports.createListing = async (req, res, next) => {
   newListing.image = { url, filename };
   newListing.geometry = {
     type: "Point",
-    coordinates: response.body.features[0].geometry.coordinates
+    coordinates: response.body.features[0].geometry.coordinates,
   };
   let savedListing = await newListing.save();
   console.log(savedListing);
@@ -128,4 +117,8 @@ module.exports.destroyListing = async (req, res) => {
   await Listing.findByIdAndDelete(id);
   req.flash("success", "Listing was deleted!");
   res.redirect("/listings");
+};
+
+module.exports.snapShot = (req, res) => {
+  res.render("listings/gallery.ejs");
 };

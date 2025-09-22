@@ -18,6 +18,7 @@ router.route("/").get(wrapAsync(listingController.index)).post(
 
   wrapAsync(listingController.createListing)
 );
+router.get("/snapshot", listingController.snapShot)
 
 //new route
 router.get("/new", isLoggedin, listingController.renderNewForm)
@@ -42,5 +43,6 @@ router.get(
   isOwner,
   wrapAsync(listingController.renderEditForm)
 );
+//explore gallery
 
 module.exports = router;

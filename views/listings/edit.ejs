@@ -32,7 +32,6 @@
 
       <div class="mb-3">
         <p>Original image</p>
-        <!-- Make image responsive -->
         <img
           src="<%= originalImgUrl %>"
           alt="Original Image"
@@ -85,11 +84,7 @@
       </div>
       <div class="mb-3">
         <label for="category" class="form-label">Category</label>
-        <select
-          name="listing[category]"
-          class="form-control"
-          required
-        >
+        <select name="listing[category]" class="form-control" required>
           <option value="">Select a Category</option>
           <option value="Trending">Trending</option>
           <option value="Rooms">Rooms</option>
@@ -110,4 +105,3 @@
     </form>
   </div>
 </div>
-
