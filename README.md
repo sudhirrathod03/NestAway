@@ -1,7 +1,7 @@
 # NestAway 🏡
 
 [![Live Demo](https://img.shields.io/badge/demo-online-brightgreen)](https://nest-away-delta.vercel.app/listings)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 
 A full-stack property rental platform built with MVC architecture. Browse, list, and manage rental properties with advanced search and real-time location features.
 
@@ -59,7 +59,8 @@ nodemon app.js
 
 ## 📸 Screenshots
 
-![NestAway Preview](screenshots/preview.png)
+![NestAway Preview](<img width="1452" height="625" alt="image" src="https://github.com/user-attachments/assets/975a59d1-ed83-483f-977d-610df9c1613a" />
+)
 
 ## 👨‍💻 Author
 
