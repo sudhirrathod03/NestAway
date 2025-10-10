@@ -57,10 +57,6 @@ nodemon app.js
 - 25% improvement in data retrieval speed
 - 95%+ geolocation accuracy
 
-## 📸 Screenshots
-
-![NestAway Preview](<img width="1452" height="625" alt="image" src="https://github.com/user-attachments/assets/975a59d1-ed83-483f-977d-610df9c1613a" />
-)
 
 ## 👨‍💻 Author
 
