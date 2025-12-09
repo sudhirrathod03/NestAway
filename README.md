@@ -12,7 +12,6 @@ A full-stack property rental platform built with MVC architecture. Browse, list,
 - 🏠 Browse and manage rental properties
 - 🔍 Advanced search with filters
 - 🗺️ Interactive maps with Mapbox integration
-- 🌤️ **Nature Snapshot** - Real-time weather data (OpenWeatherMap) and location photos (Unsplash)
 - 📍 Smart geolocation for 95%+ of listings
 - ⚡ 25% faster data retrieval with optimized APIs
 
